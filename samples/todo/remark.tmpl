@@ -1,0 +1,9 @@
+# {{.name}}
+
+**Date:**: `{{.time}}`
+
+**Tags:**: #todo {{ range split (index . "tags") "," }}#{{ . }} {{ end }}
+
+---
+{{if index . "items"}}{{ range split (index . "items") "," }}
+- [ ] {{ . }} {{ end }}{{ end }}
